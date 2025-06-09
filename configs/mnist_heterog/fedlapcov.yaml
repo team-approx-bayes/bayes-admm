@@ -1,0 +1,21 @@
+seed_init: 62
+num_runs: 1
+benchmark: hetmnist_non_iid
+num_clients: 100
+num_comm_rounds: 100
+federated_method: FedLapCov
+federated_step_size: 0.0001
+dual_update_damping: 0.01
+dual_update_damping_multiply_Nk_N: 0
+global_prior_prec: 0.0001
+num_epochs_batch: 0
+local_prior_prec: 0
+global_step_size: 0
+network_type: MLP
+hidden_sizes: [200, 100]
+opt_type: Adam
+num_epochs_local: 10
+learning_rate_local: 0.001
+batch_size: 64
+plot_comm_round: 0
+log_interval_epochs: 10
