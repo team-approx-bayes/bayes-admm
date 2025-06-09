@@ -13,7 +13,7 @@ ClosureType = Callable[[], Tensor]
 def _welford_mean(avg: Optional[Tensor], newval: Tensor, count: int) -> Tensor:
     return newval if avg is None else avg + (newval - avg) / count
 
-
+# extends the IVON algorithm to handle Lagrange multipliers and general prior
 class IVON(torch.optim.Optimizer):
     hessian_approx_methods = (
         'price',
