@@ -108,7 +108,7 @@ class CifarNet(nn.Module):
             o = o[:, output_range]
         return o
 
-# Define a CNN for CIFAR datasets
+# Define a CNN for CIFAR datasets (the architecture is from the FedDyn paper)
 class FedDynCifarCNN(nn.Module):
     def __init__(self, n_cls = 10):
         super(type(self), self).__init__()

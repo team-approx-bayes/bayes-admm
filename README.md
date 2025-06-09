@@ -33,7 +33,7 @@ Possible choices for method are:
 - [FedLapCov](https://arxiv.org/abs/2501.17325v1) (fedlapcov.yaml)
 - Our proposed BayesADMM (fedivon.yaml) 
 
-The baselines for FMNIST and CIFAR-10 (CNN from Zenke et al.) are run using the code provided by [Swaroop et al., 2025](https://arxiv.org/abs/2501.17325v1). We do not provide config files for these baselines here. We do provide configs for all baselines for the CIFAR-10 (CNN from Acar et al.) experiment. 
+The baseline results for FMNIST and CIFAR-10 (CNN from Zenke et al.) are from [Swaroop et al., 2025](https://arxiv.org/abs/2501.17325v1). We do not provide config files for those experiments here. We do provide configs for all baselines for the CIFAR-10 (CNN from Acar et al.) experiment. 
 
 ### For Table 2
 - MNIST (100 clients, highly heterog.): configs/mnist_heterog/[method].yaml

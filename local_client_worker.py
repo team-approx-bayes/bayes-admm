@@ -59,10 +59,10 @@ class worker():
             self.model = FedDynCifarCNN(n_cls=self.model_parameters['D_out'])
             self.without_trainloaders = False
         elif self.model_parameters['network_type'] == "ResNet20":
-            self.model = ResNet20(num_classes=self.model_parameters['D_out'])#in_channels=in_channels, out_channels=self.model_parameters['D_out'])
+            self.model = ResNet20(num_classes=self.model_parameters['D_out'])
             self.without_trainloaders = False
         elif self.model_parameters['network_type'] == "ResNet20FRN":
-            self.model = ResNet20(num_classes=self.model_parameters['D_out'], normalisation='FRN')#in_channels=in_channels, out_channels=self.model_parameters['D_out'])
+            self.model = ResNet20(num_classes=self.model_parameters['D_out'], normalisation='FRN')
             self.without_trainloaders = False
         else:
             raise ValueError("Do not currently support args.network_type:", self.model_parameters['network_type'])
@@ -303,7 +303,7 @@ class worker():
     # FedIVON dual update: v_k <-- v_k + rho * (s_g m_g - s_k m_k)
     #                      V_k <-- V_k + rho * (S_g - S_k)
     def fedivon_dual_update(self):
-        # dont do a dual update when computing the batch upperbound
+        # Don't do a dual update when computing the batch upperbound
         if self.optimiser_parameters['batchupperbound'] == True: 
             return 
 
