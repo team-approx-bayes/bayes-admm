@@ -50,7 +50,7 @@ Note that results vary per seed, and to obtain the exact numbers from the paper,
 ## How to cite
 
 ```
-@artcile{MoellenhoffSwaroop2025,
+@article{MoellenhoffSwaroop2025,
       title={Federated ADMM from Bayesian Duality}, 
       author={M{\"o}llenhoff, Thomas and Swaroop, Siddharth and Doshi-Velez, Finale and Khan, Mohammad Emtiyaz},
       journal={arXiv:xxxx.xxxxx},
