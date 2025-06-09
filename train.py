@@ -73,10 +73,8 @@ parser.add_argument('--beta2_local', type=float, default=0.999, help='hessian mo
 parser.add_argument('--h0_local', type=float, default=0.0, help='hessian init in first step')
 parser.add_argument('--use_scheduler', type=bool, default=False, help='use a learning rate scheduler')
 parser.add_argument('--temperature', type=float, default=1.0, help='scaling term in front of KL')
-parser.add_argument('--extra_weightdecay', type=float, default=0.0, help='additional weightdecay on the client')
 parser.add_argument('--mcsamples', type=int, default=1, help='number of MC samples in IVON')
 parser.add_argument('--batch_size', type=int, default=64, help='number of data points in a (mini)batch')
-parser.add_argument('--init_at_zero', type=bool, default=False, help='by default, init prior at NN init')
 parser.add_argument('--print_server_elbo', type=bool, default=False, help='for debugging, print the variational objective at server')
 parser.add_argument('--num_steps_local', type=int, default=-1, help='if set, will do steps rather than epochs on the client')
 
@@ -150,7 +148,6 @@ def init_data_generator_local_clients(args, seed):
         'temperature' : args.temperature,
         'mcsamples' : args.mcsamples,
         'scheduler' : args.use_scheduler,
-        'localwd' : args.extra_weightdecay,
         'batchupperbound' : False  
     }
 
@@ -226,8 +223,6 @@ def init_data_generator_local_clients(args, seed):
     torch.cuda.manual_seed(seed)
     global_worker = worker(model_parameters, optimiser_parameters, misc_parameters, trainloader=trainloader,
                            testloader=testloader, client_ind=0, use_cuda=args.use_cuda, seed=seed)
-    if args.init_at_zero:
-        set_model_parameters(global_worker.model, torch.zeros_like(return_model_parameters(global_worker.model)))
 
     if args.use_cuda:
         global_worker.model = global_worker.model.cuda()
@@ -257,7 +252,6 @@ def upper_bound_batch_data(args, data_generator, seed):
         'temperature' : args.temperature,
         'mcsamples' : args.mcsamples,
         'scheduler' : args.use_scheduler,
-        'localwd' : args.extra_weightdecay,
         'batchupperbound' : True # special settings so true objective is solved
     }
 

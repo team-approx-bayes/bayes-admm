@@ -153,8 +153,7 @@ class worker():
                             prior_prec=prior_prec, 
                             dual_mean=self.dual_mean, # these are zero
                             dual_prec=self.dual_prec, # these are zero 
-                            hess_init=optimiser_parameters['h0'],
-                            local_wd=optimiser_parameters['localwd'])
+                            hess_init=optimiser_parameters['h0'])
 
             else: 
                 self.optimiser = IVON(self.model.parameters(), 
@@ -166,8 +165,7 @@ class worker():
                             prior_prec=prior_prec, 
                             dual_mean=self.dual_mean / (self.train_set_size / tau),
                             dual_prec=self.dual_prec / (self.train_set_size / tau),
-                            hess_init=optimiser_parameters['h0'],
-                            local_wd=optimiser_parameters['localwd'])
+                            hess_init=optimiser_parameters['h0'])
 
             # Scheduler
             if self.optimiser_parameters['scheduler'] == True:
