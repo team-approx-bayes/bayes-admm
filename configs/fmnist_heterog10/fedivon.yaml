@@ -1,4 +1,4 @@
-seed_init: 63
+seed_init: 62
 num_runs: 1
 benchmark: fashionmnist_10p_non_iid
 network_type: MLP
