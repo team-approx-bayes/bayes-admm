@@ -313,7 +313,6 @@ def run_experiment(args, seed):
 
     # For FedIVON, the server has a precision vector. We create it here.
     if args.federated_method == 'FedIVON':
-        # NEW: we initialize the server at the prior! 
         mean, prec = local_clients_list[0].optimiser._get_posterior()
         global_prec = torch.ones_like(prec[0]) * args.local_prior_prec 
         set_model_parameters(global_worker.model, torch.zeros_like(mean[0]))
@@ -407,7 +406,6 @@ def run_experiment(args, seed):
             set_model_parameters(global_worker.model, global_mean)
         elif args.federated_method == 'FedIVON':
             with torch.no_grad(): 
-                global_mean = return_model_parameters(global_worker.model)
                 global_natmean_avg = torch.zeros_like(return_model_parameters(global_worker.model))
                 global_prec_avg = torch.zeros_like(return_model_parameters(global_worker.model))
                 dual_mean_sum = torch.zeros_like(return_model_parameters(global_worker.model))
@@ -432,7 +430,6 @@ def run_experiment(args, seed):
 
                 global_prec = (1.0 - alpha) * global_prec_avg + alpha * (prior_precision - dual_prec_sum)
                 global_mean = ((1.0 - alpha) * global_natmean_avg - alpha * dual_mean_sum) / global_prec
-
 
                 # print the variational objective at server (for debugging)
                 if args.print_server_elbo: 
@@ -568,6 +565,7 @@ def run_experiment(args, seed):
                 'global_accuracy_bayes_seed%d_list' % seed: global_test_acc_bayes,
                 'global_nll_bayes_seed%d_list' % seed: global_test_nll_bayes
             })
+
 
 if __name__ == '__main__':
     args = parser.parse_args()

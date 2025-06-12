@@ -16,12 +16,8 @@ dual_update_damping: 0.1
 federated_step_size: 1.0
 beta2_local: 0.99998
 use_scheduler: True
-clipradius_local: inf
 dual_update_damping_multiply_Nk_N: 0.0
-extra_weightdecay: 0
 num_epochs_local: 25
-init_at_zero: False
-use_model_merging_style_global_update: False
 wandb_log: False
 log_interval_epochs: 5
 plot_comm_round: 0
