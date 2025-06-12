@@ -1,0 +1,8 @@
+laplace==0.1
+matplotlib==3.7.4
+numpy==1.24.4
+PyYAML==6.0.2
+scikit_learn==1.7.0
+torch==2.1.1
+torchvision==0.16.1
+wandb==0.20.1
