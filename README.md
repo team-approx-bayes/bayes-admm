@@ -3,7 +3,7 @@ We provide PyTorch code to repeat all experiments from the following paper:
 
 **Federated ADMM from Bayesian Duality**\
 *T. Möllenhoff\*, S. Swaroop\*, F. Doshi-Velez, M.E. Khan*\
-preprint, arXiv:xxxx.xxxxx, [paper link](.)
+preprint, arXiv:2506.13150, [paper link](https://arxiv.org/abs/2506.13150)
 
 ## Figure 3
 Go to the toyexamples folder, e.g.,  ``cd toyexamples``. 
@@ -53,8 +53,8 @@ Note that results vary per seed, and to obtain the exact numbers from the paper,
 @article{MoellenhoffSwaroop2025,
       title={Federated ADMM from Bayesian Duality}, 
       author={M{\"o}llenhoff, Thomas and Swaroop, Siddharth and Doshi-Velez, Finale and Khan, Mohammad Emtiyaz},
-      journal={arXiv:xxxx.xxxxx},
+      journal={arXiv:2506.13150},
       year={2025},
-      url={https://arxiv.org/abs/xxxx.xxxxx}
+      url={https://arxiv.org/abs/2506.13150}
 }
 ```
