@@ -51,7 +51,7 @@ Note that results vary per seed, and to obtain the exact numbers from the paper,
 
 ```
 @article{MoellenhoffSwaroop2025,
-      title={Federated ADMM from Bayesian Duality}, 
+      title={Federated {ADMM} from {B}ayesian Duality}, 
       author={M{\"o}llenhoff, Thomas and Swaroop, Siddharth and Doshi-Velez, Finale and Khan, Mohammad Emtiyaz},
       journal={arXiv:2506.13150},
       year={2025},
