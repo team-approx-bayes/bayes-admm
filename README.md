@@ -3,7 +3,7 @@ We provide PyTorch code to repeat all experiments from the following paper:
 
 **Federated ADMM from Bayesian Duality**\
 *T. Möllenhoff\*, S. Swaroop\*, F. Doshi-Velez, M.E. Khan*\
-preprint, arXiv:2506.13150, [paper link](https://arxiv.org/abs/2506.13150)
+International Conference on Learning Representations (ICLR), 2026, [paper link](https://arxiv.org/abs/2506.13150)
 
 ## Figure 3
 Go to the toyexamples folder, e.g.,  ``cd toyexamples``. 
@@ -50,11 +50,11 @@ Note that results vary per seed, and to obtain the exact numbers from the paper,
 ## How to cite
 
 ```
-@article{MoellenhoffSwaroop2025,
+@inproceedings{MoellenhoffSwaroop2026,
       title={Federated {ADMM} from {B}ayesian Duality}, 
       author={M{\"o}llenhoff, Thomas and Swaroop, Siddharth and Doshi-Velez, Finale and Khan, Mohammad Emtiyaz},
-      journal={arXiv:2506.13150},
-      year={2025},
+      booktitle={International Conference on Learning Representations (ICLR)},
+      year={2026},
       url={https://arxiv.org/abs/2506.13150}
 }
 ```
