@@ -17,4 +17,4 @@ global_step_size: 1
 num_epochs_local: 5
 learning_rate_local: 0.001
 plot_comm_round: 0
-log_interval_epochs: 1
+log_interval_epochs: 0

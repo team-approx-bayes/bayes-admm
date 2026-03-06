@@ -18,4 +18,4 @@ num_epochs_local: 10
 learning_rate_local: 0.001
 batch_size: 64
 plot_comm_round: 0
-log_interval_epochs: 10
+log_interval_epochs: 0

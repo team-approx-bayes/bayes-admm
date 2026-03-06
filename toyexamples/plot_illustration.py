@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pickle 
 import torch
 from matplotlib.colors import LinearSegmentedColormap
+from matplotlib.colors import colorConverter
 from matplotlib import patheffects
 from matplotlib.markers import MarkerStyle
 from matplotlib.patches import Rectangle
@@ -51,7 +52,7 @@ def plot_dataset(ax, X, y, client):
 
     mycf = (myc1, myc2)[client]
 
-    myedge = ['black', 'black']
+    myedge = [colorConverter.to_rgba('white', alpha=.5), colorConverter.to_rgba('white', alpha=.5)]
     #filled_minus = MarkerStyle("_", fillstyle="full")
     ax.scatter(X[visible_points1, 0], X[visible_points1, 1], marker='s', c=mycf[0], 
         s=140, edgecolors=myedge[0], clip_on=True, linewidths=0.5)
@@ -98,40 +99,40 @@ def plot_classifier(ax, m, S, X, y, title='',data=True, bayes=True, client=0,it=
         contour = ax.contour(xaxis, yaxis, probs.reshape(Nplot, Nplot), [0.25, 0.5, 0.75], linewidths=[1,5,1], 
                 colors=['gray', 'black', 'gray'], linestyles=['dashed', 'solid', 'dashed'],zorder=1)
 
-        labels = ax.clabel(
-            contour, 
-            levels=[0.25, 0.5, 0.75],
-            fmt={0.5: f'{it+1}', 0.25: '', 0.75: ''},  # Label format for the level 0.5
-            inline=True,        # Inline label with the contour line
-            fontsize=24,        # Font size of the label
-            colors='black',     # Text color
-            inline_spacing=10,   # Space around the label
-            use_clabeltext=True,
-            manual=False,
-            zorder=10
-        )
+        # labels = ax.clabel(
+        #     contour, 
+        #     levels=[0.25, 0.5, 0.75],
+        #     fmt={0.5: f'{it+1}', 0.25: '', 0.75: ''},  # Label format for the level 0.5
+        #     inline=True,        # Inline label with the contour line
+        #     fontsize=24,        # Font size of the label
+        #     colors='black',     # Text color
+        #     inline_spacing=10,   # Space around the label
+        #     use_clabeltext=True,
+        #     manual=False,
+        #     zorder=10
+        # )
     
     else: 
         contour = ax.contour(xaxis, yaxis, probs.reshape(Nplot, Nplot), [0.5], linewidths=5, 
                 colors=['black'], linestyles=['solid'], zorder=1)
-        labels = ax.clabel(
-            contour, 
-            levels=[0.5],
-            fmt={0.5: f'{it+1}'},  # Label format for the level 0.5
-            inline=True,        # Inline label with the contour line
-            fontsize=24,        # Font size of the label
-            colors='black',     # Text color
-            inline_spacing=15,   # Space around the label
-            use_clabeltext=True,
-            manual=False,
-            zorder=10
-        )
+        # labels = ax.clabel(
+        #     contour, 
+        #     levels=[0.5],
+        #     fmt={0.5: f'{it+1}'},  # Label format for the level 0.5
+        #     inline=True,        # Inline label with the contour line
+        #     fontsize=24,        # Font size of the label
+        #     colors='black',     # Text color
+        #     inline_spacing=15,   # Space around the label
+        #     use_clabeltext=True,
+        #     manual=False,
+        #     zorder=10
+        # )
 
-    for label in labels:
-        label.set_path_effects([
-            patheffects.withStroke(linewidth=3, foreground="white"),
-            patheffects.Normal()
-        ])
+    # for label in labels:
+    #     label.set_path_effects([
+    #         patheffects.withStroke(linewidth=3, foreground="white"),
+    #         patheffects.Normal()
+    #     ])
         
 
 
